@@ -1,6 +1,7 @@
+#set($dollar = '$')
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+<modelVersion>4.0.0</modelVersion>
   <groupId>${groupId}</groupId>
   <artifactId>${artifactId}</artifactId>
   <version>${version}</version>
@@ -265,7 +266,7 @@
                           <followSymlinks>false</followSymlinks>
                       </fileset>
                       <fileset>
-                          <directory>${basedir}/res/values</directory>
+                          <directory>${dollar}{basedir}/res/values</directory>
                           <includes>
                               <include>properties.xml</include>
                           </includes>
@@ -286,10 +287,10 @@
             <goal>copy-resources</goal>
           </goals>
           <configuration>
-            <outputDirectory>${basedir}/res/values</outputDirectory>
+            <outputDirectory>${dollar}{basedir}/res/values</outputDirectory>
             <resources>
               <resource>
-                <directory>${basedir}/src/main/resources</directory>
+                <directory>${dollar}{basedir}/src/main/resources</directory>
                 <includes>
                   <include>**/properties.xml</include>
                 </includes>
@@ -347,7 +348,7 @@
             </zipalign>
             <proguard>
               <skip>false</skip>
-              <config>${basedir}/src/main/resources/proguard-project.txt</config>
+              <config>${dollar}{basedir}/src/main/resources/proguard-project.txt</config>
               <jvmArguments>
                 <jvmArgument>-Xms256m</jvmArgument>
                 <jvmArgument>-Xmx512m</jvmArgument>
@@ -426,5 +427,5 @@
     </properties>
   </profile>
 
-</profiles>
+  </profiles>
 </project>
