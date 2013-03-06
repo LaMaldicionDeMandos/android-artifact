@@ -1,9 +1,0 @@
-<archetype>
-  <id>android-archetype</id>
-  <sources>
-    <source>src/main/java/empty</source>
-  </sources>
-  <testSources>
-    <source>src/test/java/empty</source>
-  </testSources>
-</archetype>

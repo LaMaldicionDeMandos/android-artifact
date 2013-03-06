@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="${package}"
+    android:versionCode="1000001"
+    android:versionName="1.0.1-TEST" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="15"
+        tools:ignore="OldTargetApi" />
+
+</manifest>
