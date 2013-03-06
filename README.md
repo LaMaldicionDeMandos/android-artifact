@@ -1,4 +1,4 @@
 android-artifact
 ================
 
-Artifact para proyectos android
+Achetype para proyectos android
