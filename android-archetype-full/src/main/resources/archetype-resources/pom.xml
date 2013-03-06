@@ -47,6 +47,18 @@
       <version>${google.support.capability.version}</version>
     </dependency>
     <dependency>
+      <groupId>android.support</groupId>
+      <artifactId>compatibility-v7-gridlayout</artifactId>
+      <version>${google.support.capability.version}</version>
+      <type>apklib</type>
+    </dependency>
+    <dependency>
+      <groupId>android.support</groupId>
+      <artifactId>compatibility-v7-gridlayout</artifactId>
+      <version>${google.support.capability.version}</version>
+      <type>jar</type>
+    </dependency>
+    <dependency>
       <groupId>com.google.android.maps</groupId>
       <artifactId>maps</artifactId>
       <version>${android.maps.version}</version>
