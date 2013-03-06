@@ -2,8 +2,8 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.zauberlabs.archetypes</groupId>
-  <artifactId>android-archetype</artifactId>
+  <artifactId>android-archetype-full</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <name>Archetype - android-archetype</name>
+  <name>Archetype - android-archetype-full</name>
   <url>http://maven.apache.org</url>
 </project>
