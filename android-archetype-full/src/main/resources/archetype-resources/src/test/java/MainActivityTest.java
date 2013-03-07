@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
 * @author Marcelo Pasut
 * @since Mar 6, 2013
 */
-@RunWith(RealEstateTestRunner.class)
+@RunWith(CustomTestRunner.class)
 public class MainActivityTest {
 
     private MainActivity activity;

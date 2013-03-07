@@ -20,7 +20,7 @@
   <fileSet filtered="true" packaged="true" encoding="UTF-8">
     <directory>src/main/java</directory>
     <includes>
-      <include>default/*.java</include>
+      <include>**/*.java</include>
     </includes>
   </fileSet>
   <fileSet filtered="true" packaged="true" encoding="UTF-8">

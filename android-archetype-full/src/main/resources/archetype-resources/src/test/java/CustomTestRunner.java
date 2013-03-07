@@ -12,10 +12,10 @@ import com.xtremelabs.robolectric.RobolectricTestRunner;
  * @author Matias Dumrauf
  * @since Feb 26, 2013
  */
-public class RealEstateTestRunner extends RobolectricTestRunner {
+public class CustomTestRunner extends RobolectricTestRunner {
 
-    public RealEstateTestRunner(Class<?> testClass) throws InitializationError {
-        super(testClass, new File(RealEstateTestRunner.class.getResource("/AndroidManifest.xml").getPath()),
+    public CustomTestRunner(Class<?> testClass) throws InitializationError {
+        super(testClass, new File(CustomTestRunner.class.getResource("/AndroidManifest.xml").getPath()),
                 new File(System.getProperty("user.dir") + "/res"));
     }
 
