@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 
 import com.actionbarsherlock.app.SherlockFragmentActivity;
+import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 
 /**
@@ -49,6 +50,12 @@ public class ItemDetailActivity extends SherlockFragmentActivity {
 	}
 	
 	@Override
+	public boolean onCreateOptionsMenu(Menu menu){
+		getSupportMenuInflater().inflate(R.menu.menu, menu);
+		return true;
+	}
+	
+	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case android.R.id.home:
@@ -64,8 +71,7 @@ public class ItemDetailActivity extends SherlockFragmentActivity {
 					new Intent(this, ItemListActivity.class));
 			return true;
 		case R.id.default_activity:
-			NavUtils.navigateUpTo(this,
-				new Intent(this, MainActivity.class));
+			startActivity(new Intent(this, MainActivity.class));
 		return true;
 		}
 		return super.onOptionsItemSelected(item);

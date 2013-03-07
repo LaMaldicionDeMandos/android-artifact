@@ -25,6 +25,7 @@
         </activity>
         #if(${projectType} == "masterDetail")
     <activity android:name="${package}.ItemDetailActivity"/>
+    <activity android:name="${package}.MainActivity"/>
         #end
     </application>
 
