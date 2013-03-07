@@ -2,10 +2,13 @@ package ${package};
 
 import com.actionbarsherlock.app.SherlockFragment;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
 
 import android.content.Intent; 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+
 
 /**
  * An activity representing a list of Items. This activity has different
@@ -50,6 +53,31 @@ public class ItemListActivity extends SherlockFragmentActivity implements
 		}
 
 		// TODO: If exposing deep links into your app, handle intents here.
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu){
+		getSupportMenuInflater().inflate(R.menu.menu, menu);
+		menu.findItem(R.id.master_detail).setVisible(false);
+		return true;
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case android.R.id.home:
+			// This ID represents the Home or Up button. In the case of this
+			// activity, the Up button is shown. Use NavUtils to allow users
+			// to navigate up one level in the application structure. For
+			// more details, see the Navigation pattern on Android Design:
+			//
+			// http://developer.android.com/design/patterns/navigation.html#up-vs-back
+			//
+		case R.id.default_activity:
+			startActivity(new Intent(this, MainActivity.class));
+		return true;
+		}
+		return super.onOptionsItemSelected(item);
 	}
 
 	/**

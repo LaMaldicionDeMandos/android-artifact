@@ -9,6 +9,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import android.app.Application;
+import com.xtremelabs.robolectric.Robolectric;
 /**
 * Simple test.
 *
@@ -16,18 +18,18 @@ import org.junit.runner.RunWith;
 * @since Mar 6, 2013
 */
 @RunWith(CustomTestRunner.class)
-public class MainActivityTest {
+public class ApplicationTest {
 
-    private MainActivity activity;
+    private Application app;
 
     @Before
     public void setUp() {
-        activity = new MainActivity();
-        activity.onCreate(null);
+        //app = new Application();
+        //Robolectric.application = app;
     }
     @Test
     public void testAppName() {
-        String appName = activity.getResources().getString(R.string.app_name);
+        String appName = Robolectric.application.getString(R.string.app_name);
         assertEquals(appName, "${artifactId}");
     }
 }
