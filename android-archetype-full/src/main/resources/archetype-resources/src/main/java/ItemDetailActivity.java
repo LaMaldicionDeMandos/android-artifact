@@ -59,9 +59,14 @@ public class ItemDetailActivity extends SherlockFragmentActivity {
 			//
 			// http://developer.android.com/design/patterns/navigation.html#up-vs-back
 			//
+		case R.id.master_detailt:
 			NavUtils.navigateUpTo(this,
 					new Intent(this, ItemListActivity.class));
 			return true;
+		case R.id.default_activity:
+			NavUtils.navigateUpTo(this,
+				new Intent(this, MainActivity.class));
+		return true;
 		}
 		return super.onOptionsItemSelected(item);
 	}

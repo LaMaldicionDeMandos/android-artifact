@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/select_activity"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="@string/select_activity">
+    	<menu android:id="@+id/activity_selection">
+    		<item android:id="@+id/default_activity"
+    		    android:title="@string/default_acticity"/>
+    		<item android:id="@+id/master_detailt"
+    		    android:title="@string/master_detail_activity"/>
+    	</menu>
+    </item>
+
+</menu>
