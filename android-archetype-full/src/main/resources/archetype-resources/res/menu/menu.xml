@@ -8,9 +8,11 @@
     	<menu android:id="@+id/activity_selection">
     		<item android:id="@+id/default_activity"
     		    android:title="@string/default_acticity"/>
-    		<item android:id="@+id/master_detail"
-    		    android:title="@string/master_detail_activity"/>
-    	</menu>
+            <item android:id="@+id/master_detail"
+                android:title="@string/master_detail_activity"/>
+            <item android:id="@+id/grid_activity"
+    		    android:title="@string/grid_activity"/>
+        </menu>
     </item>
 
 </menu>

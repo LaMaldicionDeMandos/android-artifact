@@ -1,27 +1,23 @@
 package ${package};
 
 import android.os.Bundle;
-import android.util.Log;
 import android.content.Intent;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 import com.actionbarsherlock.app.SherlockActivity;
 
-public class MainActivity extends SherlockActivity {
-
-    private static String TAG = "${artifactId}";
+public class GridActivity extends SherlockActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-		Log.i(TAG, "onCreate");
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_grid_layout);
     }
 
     @Override
 	public boolean onCreateOptionsMenu(Menu menu){
 		getSupportMenuInflater().inflate(R.menu.menu, menu);
-		menu.findItem(R.id.default_activity).setVisible(false);
+		menu.findItem(R.id.grid_activity).setVisible(false);
 		return true;
 	}
 	
@@ -39,8 +35,8 @@ public class MainActivity extends SherlockActivity {
 		case R.id.master_detail:
 			startActivity(new Intent(this, ItemListActivity.class));
 		return true;
-		case R.id.grid_activity:
-			startActivity(new Intent(this, GridActivity.class));
+		case R.id.default_activity:
+			startActivity(new Intent(this, MainActivity.class));
 		return true;
 		}
 		return super.onOptionsItemSelected(item);

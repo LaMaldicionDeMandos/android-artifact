@@ -7,5 +7,6 @@
     <string name="select_activity">Activities</string>
     <string name="default_acticity">Default</string>
     <string name="master_detail_activity">Master/Detail</string>
+    <string name="grid_activity">Grid Layout</string>
     
 </resources>
