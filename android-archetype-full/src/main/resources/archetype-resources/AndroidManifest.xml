@@ -23,9 +23,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="${package}.ItemDetailActivity"/>
         #if(${projectType} == "masterDetail")
-    <activity android:name="${package}.ItemDetailActivity"/>
     <activity android:name="${package}.MainActivity"/>
+        #else
+    <activity android:name="${package}.ItemListActivity"/>    
         #end
     </application>
 
