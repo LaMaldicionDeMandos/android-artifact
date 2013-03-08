@@ -3,6 +3,9 @@ package ${package};
 import java.util.Locale;
 
 import android.os.Bundle;
+import android.content.Intent;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -15,6 +18,7 @@ import android.widget.TextView;
 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.ActionBar.Tab;
+import com.actionbarsherlock.app.SherlockFragment;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 
 public class TabActivity extends SherlockFragmentActivity implements
@@ -141,7 +145,14 @@ public class TabActivity extends SherlockFragmentActivity implements
 			// getItem is called to instantiate the fragment for the given page.
 			// Return a DummySectionFragment (defined as a static inner class
 			// below) with the page number as its lone argument.
-			Fragment fragment = new DummySectionFragment();
+			Fragment fragment = null; 
+			switch(position){
+			case 0: 
+				fragment = DefaultFragment.getInstance();
+				break;
+			default:
+				fragment = new DummySectionFragment();
+			}
 			Bundle args = new Bundle();
 			args.putInt(DummySectionFragment.ARG_SECTION_NUMBER, position + 1);
 			fragment.setArguments(args);
@@ -163,9 +174,37 @@ public class TabActivity extends SherlockFragmentActivity implements
 			case 1:
 				return getString(R.string.master_detail_activity).toUpperCase(l);
 			case 2:
-				return getString(R.string.hello_world).toUpperCase(l);
+				return getString(R.string.grid_activity).toUpperCase(l);
 			}
 			return null;
+		}
+	}
+
+	/**
+	 * A dummy fragment representing a section of the app, but that simply
+	 * displays dummy text.
+	 */
+	public static class DefaultFragment extends SherlockFragment {
+		private static final DefaultFragment instance = new DefaultFragment();
+		/**
+		 * The fragment argument representing the section number for this
+		 * fragment.
+		 */
+		public static final String ARG_SECTION_NUMBER = "section_number";
+
+		public static DefaultFragment getInstance(){
+			return instance;
+		}
+		
+		public DefaultFragment() {
+		}
+
+		@Override
+		public View onCreateView(LayoutInflater inflater, ViewGroup container,
+				Bundle savedInstanceState) {
+			View rootView = inflater.inflate(R.layout.activity_main,
+					container, false);
+			return rootView;
 		}
 	}
 
