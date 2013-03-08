@@ -344,6 +344,7 @@
       <keystore.storepass>zauberlabsandroid5546</keystore.storepass>
       <keystore.keypass>zauberlabsandroid5546</keystore.keypass>
       <android.manifest.debuggable>false</android.manifest.debuggable>
+      <android.maps.key>AIzaSyD5P-GwFlyZscw6o6PdF8Ho0gar32amdmM</android.maps.key>
     </properties>
 
     <build>
@@ -437,6 +438,7 @@
     <properties>
       <sign.debug>true</sign.debug>
       <android.manifest.debuggable>true</android.manifest.debuggable>
+      <android.maps.key>AIzaSyD5P-GwFlyZscw6o6PdF8Ho0gar32amdmM</android.maps.key>
     </properties>
   </profile>
 
