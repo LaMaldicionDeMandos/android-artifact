@@ -15,6 +15,7 @@
         <activity
             #if(${projectType} == "masterDetail") android:name="${package}.ItemListActivity"
             #elseif(${projectType} == "gridLayout") android:name="${package}.GridActivity"
+            #elseif(${projectType} == "tab") android:name="${package}.TabActivity"
             #else android:name="${package}.MainActivity"
             #end
             android:label="@string/app_name" >
@@ -28,12 +29,19 @@
         #if(${projectType} == "masterDetail")
     <activity android:name="${package}.MainActivity"/>
     <activity android:name="${package}.GridActivity"/>
+    <activity android:name="${package}.TabActivity"/>
         #elseif(${projectType} == "gridLayout")
     <activity android:name="${package}.MainActivity"/>
     <activity android:name="${package}.ItemListActivity"/>    
+    <activity android:name="${package}.TabActivity"/>    
+        #elseif(${projectType} == "tab")
+    <activity android:name="${package}.MainActivity"/>
+    <activity android:name="${package}.ItemListActivity"/>    
+    <activity android:name="${package}.GridActivity"/>
         #else
     <activity android:name="${package}.ItemListActivity"/>
     <activity android:name="${package}.GridActivity"/>    
+    <activity android:name="${package}.TabActivity"/>    
         #end
     </application>
 
