@@ -38,6 +38,9 @@ public class GridActivity extends SherlockActivity {
 		case R.id.default_activity:
 			startActivity(new Intent(this, MainActivity.class));
 		return true;
+		case R.id.tab_activity:
+			startActivity(new Intent(this, TabActivity.class));
+		return true;
 		}
 		return super.onOptionsItemSelected(item);
 	}

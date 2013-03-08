@@ -75,6 +75,37 @@ public class TabActivity extends SherlockFragmentActivity implements
 					.setTabListener(this));
 		}
 	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu){
+		getSupportMenuInflater().inflate(R.menu.menu, menu);
+		menu.findItem(R.id.tab_activity).setVisible(false);
+		return true;
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case android.R.id.home:
+			// This ID represents the Home or Up button. In the case of this
+			// activity, the Up button is shown. Use NavUtils to allow users
+			// to navigate up one level in the application structure. For
+			// more details, see the Navigation pattern on Android Design:
+			//
+			// http://developer.android.com/design/patterns/navigation.html#up-vs-back
+			//
+		case R.id.master_detail:
+			startActivity(new Intent(this, ItemListActivity.class));
+		return true;
+		case R.id.grid_activity:
+			startActivity(new Intent(this, GridActivity.class));
+		return true;
+		case R.id.default_activity:
+			startActivity(new Intent(this, MainActivity.class));
+		return true;
+		}
+		return super.onOptionsItemSelected(item);
+	}
 	
 	@Override
 	public void onTabSelected(Tab tab, FragmentTransaction ft) {

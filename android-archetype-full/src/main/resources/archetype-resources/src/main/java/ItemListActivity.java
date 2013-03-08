@@ -76,6 +76,12 @@ public class ItemListActivity extends SherlockFragmentActivity implements
 		case R.id.default_activity:
 			startActivity(new Intent(this, MainActivity.class));
 		return true;
+		case R.id.grid_activity:
+			startActivity(new Intent(this, GridActivity.class));
+		return true;
+		case R.id.tab_activity:
+			startActivity(new Intent(this, TabActivity.class));
+		return true;
 		}
 		return super.onOptionsItemSelected(item);
 	}
