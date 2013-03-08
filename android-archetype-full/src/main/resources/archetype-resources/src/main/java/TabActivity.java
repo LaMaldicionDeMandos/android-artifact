@@ -145,24 +145,19 @@ public class TabActivity extends SherlockFragmentActivity implements
 			// getItem is called to instantiate the fragment for the given page.
 			// Return a DummySectionFragment (defined as a static inner class
 			// below) with the page number as its lone argument.
-			Fragment fragment = null; 
 			switch(position){
 			case 0: 
-				fragment = DefaultFragment.getInstance();
-				break;
-			default:
-				fragment = new DummySectionFragment();
+				return DefaultFragment.getInstance();
+			case 1:
+				return GridFragment.getInstance();
 			}
-			Bundle args = new Bundle();
-			args.putInt(DummySectionFragment.ARG_SECTION_NUMBER, position + 1);
-			fragment.setArguments(args);
-			return fragment;
+			return null;
 		}
 
 		@Override
 		public int getCount() {
-			// Show 3 total pages.
-			return 3;
+			// Show 2 total pages.
+			return 2;
 		}
 
 		@Override
@@ -172,25 +167,14 @@ public class TabActivity extends SherlockFragmentActivity implements
 			case 0:
 				return getString(R.string.default_acticity).toUpperCase(l);
 			case 1:
-				return getString(R.string.master_detail_activity).toUpperCase(l);
-			case 2:
 				return getString(R.string.grid_activity).toUpperCase(l);
 			}
 			return null;
 		}
 	}
 
-	/**
-	 * A dummy fragment representing a section of the app, but that simply
-	 * displays dummy text.
-	 */
 	public static class DefaultFragment extends SherlockFragment {
 		private static final DefaultFragment instance = new DefaultFragment();
-		/**
-		 * The fragment argument representing the section number for this
-		 * fragment.
-		 */
-		public static final String ARG_SECTION_NUMBER = "section_number";
 
 		public static DefaultFragment getInstance(){
 			return instance;
@@ -208,29 +192,21 @@ public class TabActivity extends SherlockFragmentActivity implements
 		}
 	}
 
-	/**
-	 * A dummy fragment representing a section of the app, but that simply
-	 * displays dummy text.
-	 */
-	public static class DummySectionFragment extends Fragment {
-		/**
-		 * The fragment argument representing the section number for this
-		 * fragment.
-		 */
-		public static final String ARG_SECTION_NUMBER = "section_number";
+	public static class GridFragment extends SherlockFragment {
+		private static final GridFragment instance = new GridFragment();
 
-		public DummySectionFragment() {
+		public static GridFragment getInstance(){
+			return instance;
+		}
+		
+		public GridFragment() {
 		}
 
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
 				Bundle savedInstanceState) {
-			View rootView = inflater.inflate(R.layout.fragment_tab_dummy,
+			View rootView = inflater.inflate(R.layout.activity_grid_layout,
 					container, false);
-			TextView dummyTextView = (TextView) rootView
-					.findViewById(R.id.section_label);
-			dummyTextView.setText(Integer.toString(getArguments().getInt(
-					ARG_SECTION_NUMBER)));
 			return rootView;
 		}
 	}
