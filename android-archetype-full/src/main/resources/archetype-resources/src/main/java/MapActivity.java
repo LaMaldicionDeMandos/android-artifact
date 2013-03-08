@@ -21,7 +21,7 @@ public class MapActivity extends SherlockActivity {
     @Override
 	public boolean onCreateOptionsMenu(Menu menu){
 		getSupportMenuInflater().inflate(R.menu.menu, menu);
-		menu.findItem(R.id.default_activity).setVisible(false);
+		menu.findItem(R.id.map_activity).setVisible(false);
 		return true;
 	}
 	
@@ -44,6 +44,9 @@ public class MapActivity extends SherlockActivity {
 		return true;
 		case R.id.tab_activity:
 			startActivity(new Intent(this, TabActivity.class));
+		return true;
+		case R.id.default_activity:
+			startActivity(new Intent(this, MainActivity.class));
 		return true;
 		}
 		return super.onOptionsItemSelected(item);

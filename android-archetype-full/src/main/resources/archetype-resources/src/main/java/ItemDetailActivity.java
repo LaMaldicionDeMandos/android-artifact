@@ -72,7 +72,16 @@ public class ItemDetailActivity extends SherlockFragmentActivity {
 			return true;
 		case R.id.default_activity:
 			startActivity(new Intent(this, MainActivity.class));
-		return true;
+			return true;
+		case R.id.grid_activity:
+			startActivity(new Intent(this, GridActivity.class));
+			return true;
+		case R.id.tab_activity:
+			startActivity(new Intent(this, TabActivity.class));
+			return true;
+		case R.id.map_activity:
+			startActivity(new Intent(this, MapActivity.class));
+			return true;
 		}
 		return super.onOptionsItemSelected(item);
 	}

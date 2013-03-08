@@ -45,6 +45,9 @@ public class MainActivity extends SherlockActivity {
 		case R.id.tab_activity:
 			startActivity(new Intent(this, TabActivity.class));
 		return true;
+		case R.id.map_activity:
+			startActivity(new Intent(this, MapActivity.class));
+		return true;
 		}
 		return super.onOptionsItemSelected(item);
 	}

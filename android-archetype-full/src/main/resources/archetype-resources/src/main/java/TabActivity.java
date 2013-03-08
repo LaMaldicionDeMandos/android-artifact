@@ -21,6 +21,8 @@ import com.actionbarsherlock.app.ActionBar.Tab;
 import com.actionbarsherlock.app.SherlockFragment;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 
+import com.google.android.gms.maps.SupportMapFragment;
+
 public class TabActivity extends SherlockFragmentActivity implements
 		ActionBar.TabListener {
 
@@ -107,6 +109,9 @@ public class TabActivity extends SherlockFragmentActivity implements
 		case R.id.default_activity:
 			startActivity(new Intent(this, MainActivity.class));
 		return true;
+		case R.id.map_activity:
+			startActivity(new Intent(this, MapActivity.class));
+		return true;
 		}
 		return super.onOptionsItemSelected(item);
 	}
@@ -150,14 +155,16 @@ public class TabActivity extends SherlockFragmentActivity implements
 				return DefaultFragment.getInstance();
 			case 1:
 				return GridFragment.getInstance();
+			case 2:
+				return MapFragment.getInstance();
 			}
 			return null;
 		}
 
 		@Override
 		public int getCount() {
-			// Show 2 total pages.
-			return 2;
+			// Show 3 total pages.
+			return 3;
 		}
 
 		@Override
@@ -168,6 +175,8 @@ public class TabActivity extends SherlockFragmentActivity implements
 				return getString(R.string.default_acticity).toUpperCase(l);
 			case 1:
 				return getString(R.string.grid_activity).toUpperCase(l);
+			case 2:
+				return getString(R.string.map_activity).toUpperCase(l);
 			}
 			return null;
 		}
@@ -209,5 +218,25 @@ public class TabActivity extends SherlockFragmentActivity implements
 					container, false);
 			return rootView;
 		}
+	}
+
+	public static class MapFragment extends SupportMapFragment {
+		private static final MapFragment instance = new MapFragment();
+
+		public static MapFragment getInstance(){
+			return instance;
+		}
+		
+		public MapFragment() {
+		}
+/*
+		@Override
+		public View onCreateView(LayoutInflater inflater, ViewGroup container,
+				Bundle savedInstanceState) {
+			View rootView = inflater.inflate(R.layout.activity_map,
+					container, false);
+			return rootView;
+		}
+*/
 	}
 }

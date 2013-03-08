@@ -13,7 +13,9 @@
             <item android:id="@+id/grid_activity"
                 android:title="@string/grid_activity"/>
             <item android:id="@+id/tab_activity"
-    		    android:title="@string/tab_activity"/>
+                android:title="@string/tab_activity"/>
+            <item android:id="@+id/map_activity"
+    		    android:title="@string/map_activity"/>
         </menu>
     </item>
 
